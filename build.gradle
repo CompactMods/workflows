@@ -6,7 +6,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "net.minecraftforge.gradle:ForgeGradle:4.1.9"
+        classpath "net.minecraftforge.gradle:ForgeGradle:4.1.12"
     }
 }
 
@@ -109,7 +109,7 @@ minecraft {
             ) // Forge will ignore all test sources unless we explicitly tell it to include them as mod sources
             environment 'target', 'fmltestserver' // This is a custom service used to launch with ModLauncher's transforming class loader
             mods {
-                compactmachines { // The mod that is being tested - Replace this with your mod ID!
+                examplemod { // The mod that is being tested - Replace this with your mod ID!
                     sources sourceSets.main
                 }
             }
@@ -158,23 +158,13 @@ repositories {
         dirs dev_mods_dir
     }
 
-    // location of the maven that hosts JEI files
-    maven {
-        name "Progwml Repo"
-        url "http://dvs1.progwml6.com/files/maven"
-    }
-
-    // TheOneProbe
-    maven {
-        name 'tterrag maven'
-        url "http://maven.tterrag.com/"
-    }
-
     // Unit Tests
     maven {
         name 'MCUnitTests'
         url 'https://jitpack.io'
     }
+
+    // ADD OTHER DEPENDENCIES HERE, AS USUAL
 }
 
 def dev_mods = fileTree(dev_mods_dir).filter { it -> it.isFile() }.files.name.collect({ getModVersion(it) })

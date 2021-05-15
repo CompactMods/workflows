@@ -1,8 +1,7 @@
 # Creates releases on GH Packages on demand (workflow trigger)
 name: Manual Tagged Github Packages Release
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
   vars:
@@ -46,7 +45,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Publish JAR with Gradle
-        run: ./gradlew publish --max-workers 1
+        run: ./gradlew publish
         env:
           GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
