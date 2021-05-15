@@ -1,6 +1,9 @@
 # CM Workflows
 A repository hosting examples for building Minecraft mods using ForgeGradle 4 and Gradle.
 
+## mods folder
+You can place compiled MC mods into this folder to add them to the deobf environment. Note there is a specific filename format that most mods follow: `modid-mcversion-modversion.jar`. Try to rename any misbehaving mods to that format to get them to load.
+
 ## Required Setup
 These workflows assume several things about your gradle setup. Anything that has to do with builds require you to set up a properties file with specific fields, and the build gradle file to follow certain patterns.
 

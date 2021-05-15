@@ -120,7 +120,7 @@ minecraft {
 def getModVersion(filename) {
     // println(filename);
     def pattern = /^(?<modid>[^-]+)(?:-(?<mcversion>[0-9.]+))?(?:-(?<modver>[0-9.\-]+))\.jar$/;
-
+    
     def matcher = filename =~ pattern
 
     def found = matcher.find()
@@ -149,9 +149,6 @@ def getModVersion(filename) {
 
 def dev_mods_dir = "mods"
 
-task("dev") {
-    println(sourceSets.main.output.classesDirs[0]);
-}
 repositories {
     // Built mods
     flatDir {
