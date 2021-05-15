@@ -32,6 +32,22 @@ Provides automated build testing using the Gradle wrapper. This is set up to ign
 ## Github Packages (manual-gh-packages)
 The Github and Tagged Release workflows upload final results to Github Packages via the publish task.
 
+Note that packages requires a specific line added to your build.gradle file, so it can properly deploy to Maven. Your modid must be all lowercase (important) and you should have the following added to the artifact definition for the main package:
+
+```gradle
+ publications {
+    maven(MavenPublication) {
+        artifactId = mod_id // <<< this line here
+        artifacts {
+            artifact jar
+        }
+    }
+    // [snip]
+ }
+```
+
+[You can find this in the example build file.](https://github.com/CompactMods/workflows/blob/main/build.gradle#L231-L240)
+
 ### Required Properties
 | Property | Value
 | --- | ---
