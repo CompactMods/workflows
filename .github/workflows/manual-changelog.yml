@@ -1,5 +1,5 @@
 # Generates a changelog between two version-tagged commits.
-name: Generate Changelog
+name: Manual Generate Changelog
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -68,5 +68,3 @@ jobs:
           path: out
 
       - run: cat out/CHANGELOG.md
-        
-      # {needs.generate.outputs.changelog}}
