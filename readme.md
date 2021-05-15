@@ -51,7 +51,7 @@ Note that packages requires a specific line added to your build.gradle file, so 
 | mod_id | Standard mod ID
 | mod_version | Your mod's semver version (ie 1.0.0)
 
-## Automatic Tagged Version Releases (.github/workflows/tagged-release.yml)
+## [Automatic Tagged Version Releases](.github/workflows/tagged-release.yml)
 Another thing the full versioned publish workflow does is automatic release to GitHub Packages and Curseforge. Simply tag a commit with `v*` (ie `v1.0.0`) and the action will pick up the commit as a tagged version and begin a release process.
 
 ### Requirements
